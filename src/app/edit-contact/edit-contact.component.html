@@ -1,0 +1,31 @@
+<div>
+  <button class="contact-edit-btn" id="edit-btn" (click)="showInput = !showInput">Edit Contact &#9998;</button>
+  <div class="contact-modal animate" *ngIf="showInput">
+    <div class="modal-content">
+      <h4>Edit Contact: </h4>
+      <div class="contact-edit-grid">
+        <div class="grid-cell">
+          <p>Name<span class="warning">*</span>: </p>
+          <input type="text" [(ngModel)]="name" value="{{name}}" #editInputName maxlength="25">
+        </div>
+        <div class="grid-cell">
+          <p>Last Name: </p>
+          <input type="text" [(ngModel)]="lastName" value="{{lastName}}" maxlength="25">
+        </div>
+        <div class="grid-cell">
+          <p>Phone Number<span class="warning">*</span>: </p>
+          <input type="text" [(ngModel)]="phoneNumber" value="{{phoneNumber}}" #editInputNumber maxlength="13">
+        </div>
+        <div class="grid-cell">
+          <p>Address: </p>
+          <input type="text" [(ngModel)]="address" value="{{address}}">
+        </div>
+      </div>
+      <small class="warning">* Can't be blank!</small>
+      <div class="contact-edit-btn-div">
+        <button class="confirm-btn" (click)="onComplete();">Complete Changes</button>
+        <button class="cancel-btn" (click)="onCancel(); showInput = !showInput">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

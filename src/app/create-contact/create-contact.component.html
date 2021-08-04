@@ -1,0 +1,30 @@
+<button class="contact-btn" id="new-contact-btn" (click)="showCreate = !showCreate">+ New Contact</button>
+<div class="contact-modal animate" *ngIf="showCreate">
+  <div class="modal-content">
+    <h4>New Contact: </h4>
+    <div class="contact-edit-grid">
+      <div class="grid-cell">
+        <p>Name<span class="warning">*</span>: </p>
+        <input type="text" [(ngModel)]="newContact.name" #createInputName maxlength="25">
+      </div>
+      <div class="grid-cell">
+        <p>Last Name: </p>
+        <input type="text" [(ngModel)]="newContact.lastName" maxlength="25">
+      </div>
+      <div class="grid-cell">
+        <p>Phone Number<span class="warning">*</span>: </p>
+        <input type="text" [(ngModel)]="newContact.phoneNumber" #createInputNumber maxlength="13">
+      </div>
+      <div class="grid-cell">
+        <p>Address: </p>
+        <input type="text" [(ngModel)]="newContact.address" >
+      </div>
+    </div>
+    <small class="warning">* Can't be blank!</small>
+    <div  class="contact-edit-btn-div">
+      <button class="confirm-btn" (click)="addContact(); ">Add Contact</button>
+      <button class="cancel-btn" (click)="showCreate = !showCreate">Cancel</button>
+    </div>
+  </div>
+
+  </div>

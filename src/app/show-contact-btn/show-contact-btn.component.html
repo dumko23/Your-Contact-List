@@ -1,0 +1,6 @@
+<div class="contact-full">
+  <button class="contact-btn" (click)="onContactClick(); ; changeView(); "><small>{{showHide}}</small></button>
+  <app-full-contact *ngIf="showContact"></app-full-contact>
+</div>
+<app-edit-contact *ngIf="showContact">
+</app-edit-contact>
